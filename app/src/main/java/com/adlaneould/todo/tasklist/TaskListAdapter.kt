@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.adlaneould.todo.R
 
 
-class TaskListAdapter(private val taskList: List<String>) : RecyclerView.Adapter<TaskListAdapter.TaskViewHolder>() {
+class TaskListAdapter(private val taskList: List<Task>) : RecyclerView.Adapter<TaskListAdapter.TaskViewHolder>() {
 
 
     inner class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(taskTitle: String) {
+        fun bind(taskTitle: Task) {
             itemView.apply { // apply {} permet d'éviter de répéter itemView.*
                 // TODO: afficher les données et attacher les listeners aux différentes vues de notre [itemView]
                 val myAwesomeTextView = findViewById(R.id.task_title) as TextView
-                myAwesomeTextView.setText(taskTitle)
+                myAwesomeTextView.setText(taskTitle.title)
 
             }
         }
